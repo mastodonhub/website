@@ -18,7 +18,7 @@ jobs:
     - run: npm run build
     - name: Deploy
       if: success()
-      uses: crazy-max/ghaction-github-pages@v1d
+      uses: crazy-max/ghaction-github-pages@v1
       with:
         target_branch: gh-pages
         build_dir: dist
