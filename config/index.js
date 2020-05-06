@@ -5,8 +5,8 @@
 const path = require('path')
 // process.env.SERVER_UEL = 'http://111.198.75.93:8091';
 const BASE_URL = process.env.NODE_ENV === 'production'
-  ? '/'
-  : '/'
+  ? '/website'
+  : '/website'
 
 // 第一步：在config- index.jsz中 添加以下代码
 // 定义自动获取本地ip的方法开始

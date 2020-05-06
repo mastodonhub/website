@@ -1,0 +1,26 @@
+name: Github Pages Publish
+
+on:
+  push:
+    branches: dev
+  pull_request:
+    branches: dev
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: dev
+    - run: npm install
+    - run: npm run build
+    - name: Deploy
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v1d
+      with:
+        target_branch: gh-pages
+        build_dir: dist
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
